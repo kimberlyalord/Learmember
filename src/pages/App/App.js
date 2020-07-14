@@ -27,8 +27,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header>
           LEARMEMBER
+          <nav>
+            {userService.getUser() ?
+              <>
+                {userService.getUser().username ? `Welcome, ${userService.getUser().username.toUpperCase()}` : ''}
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
+                &nbsp;&nbsp;&nbsp;
+              </>
+              :
+              <>
+                <NavLink exact to='/signup'>SIGNUP</NavLink>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <NavLink exact to='/login'>LOGIN</NavLink>
+                &nbsp;&nbsp;
+              </>
+            }
+          </nav>
         </header>
       </div>
     );
