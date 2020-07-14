@@ -7,7 +7,9 @@ import userService from '../../utils/userService';
 
 
 class App extends Component {
-
+  state = {
+    user: userService.getUser(),
+  }
 
   handleLogout = () => {
     userService.logout();
