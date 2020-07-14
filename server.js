@@ -8,6 +8,10 @@ const app = express();
 require('dotenv').config();
 require('./config/database');
 
+const usersRoutes = require('./routes/users');
+// add other routes when created
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -15,6 +19,9 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // API routes
 
+app.use('/api/users', usersRoutes);
+app.use(require('./config/auth'));
+// add other routes below
 
 
 // Catch all
