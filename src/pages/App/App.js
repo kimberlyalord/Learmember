@@ -13,13 +13,13 @@ class App extends Component {
     userService.logout();
     this.setState({
       user: null
-    }, () => this.props.history.push('/'));
+    });
   }
 
   handleSignupOrLogin = () => {
     this.setState({
       user: userService.getUser()
-    }, () => this.getAllPuppies());
+    });
   }
 
   render() {
