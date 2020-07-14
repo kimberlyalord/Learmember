@@ -1,7 +1,27 @@
 import React, { Component } from 'react';
+import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
+import SignupPage from '../SignupPage/SignupPage.jsx';
+import LoginPage from '../LoginPage/LoginPage';
+import userService from '../../utils/userService';
+
 
 class App extends Component {
+
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({
+      user: null
+    }, () => this.props.history.push('/'));
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({
+      user: userService.getUser()
+    }, () => this.getAllPuppies());
+  }
+
   render() {
     return (
       <div className="App">
