@@ -22,7 +22,7 @@ async function login(req, res) {
   try {
     const foundUser = await User.findOne({ email: req.body.email });
     if (!foundUser) return res.status(501).json({ err: 'Invalid email/password combination' });
-    foundUser.comparePassword(req.body.pw, (err, isMatch) => {
+    foundUser.comparePassword(req.body.password, (err, isMatch) => {
       if (isMatch) {
         const token = createJWT(foundUser);
         res.json({ token })
