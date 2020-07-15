@@ -2,12 +2,19 @@
   text-align: center;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 7vmin auto;
+  grid-template-rows: 8vmin auto;
+}
+
+.title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4vmin;
+  text-shadow: 2px 2px 2px black;
 }
 
 .App header {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--header-background);
+  color: var(--header-text);
+  text-shadow: 2px 2px 2px black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,9 +22,14 @@
   font-size: 2.5vmin;
 }
 
+.App a {
+  text-decoration: none;
+  color: var(--header-text);
+}
+
 .App main {
-  background-color: white;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--main-text);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

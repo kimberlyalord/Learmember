@@ -28,11 +28,11 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          LEARMEMBER
+          <span className="title">LEARMEMBER</span>
           <nav>
             {userService.getUser() ?
               <>
-                {userService.getUser().username ? `Welcome, ${userService.getUser().username.toUpperCase()}` : ''}
+                {userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}
                 &nbsp;&nbsp;&nbsp;
                 <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
                 &nbsp;&nbsp;&nbsp;
