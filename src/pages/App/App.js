@@ -8,6 +8,20 @@ import userService from '../../utils/userService';
 
 class App extends Component {
   state = {
+    topics: [
+      {
+        _id: 1,
+        name: 'Learn Ruby',
+        category: 'Programming',
+        learned: false
+      },
+      {
+        _id: 2,
+        name: 'Learn French',
+        category: 'Foreign Language',
+        learned: false
+      },
+    ],
     user: userService.getUser(),
   }
 
@@ -34,8 +48,10 @@ class App extends Component {
               <>
                 {userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}
                 &nbsp;&nbsp;&nbsp;
+                <NavLink exact to='/'>SEE YOUR TOPICS</NavLink>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
                 <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
               </>
               :
               <>
