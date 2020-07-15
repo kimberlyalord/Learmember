@@ -7,7 +7,8 @@ class LoginPage extends Component {
   
   state = {
     email: '',
-    password: ''
+    password: '',
+    message: ''
   };
 
   handleChange = (e) => {
@@ -16,22 +17,26 @@ class LoginPage extends Component {
     });
   }
 
+  updateMessage = (msg) => {
+    this.setState({message: msg});
+  }
+
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await userService.login(this.state);
       this.props.handleSignupOrLogin();
-      // this.props.history.push('/');
+      this.props.history.push('/');
     } catch (err) {
-      // Use a modal or toast in your apps instead of alert
-      alert('Invalid email/password combination');
+      this.updateMessage('Invalid email/password combination');
+      // alert('Invalid email/password combination');
     }
   }
 
   render() {
     return (
       <div className="LoginPage">
-        <header className="header-footer">Log In</header>
+        <h1>Log In</h1>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">
@@ -50,6 +55,7 @@ class LoginPage extends Component {
             </div>
           </div>
         </form>
+        <p>{this.state.message}</p>
       </div>
     );
   }
