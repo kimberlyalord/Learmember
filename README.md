@@ -21,3 +21,7 @@
 
 ## Next Steps
 
+
+## Credits
+
+<a href="https://icons8.com/icon/104078/critical-thinking">Favicon by Icons8</a>
