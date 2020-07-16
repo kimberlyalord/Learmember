@@ -9,7 +9,7 @@ require('dotenv').config();
 require('./config/database');
 
 const usersRoutes = require('./routes/users');
-// add other routes when created
+const topicsRoutes = require('./routes/topics');
 
 
 app.use(logger('dev'));
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/users', usersRoutes);
 app.use(require('./config/auth'));
-// add other routes below
+app.use('/api/topics', topicsRoutes);
 
 
 // Catch all
