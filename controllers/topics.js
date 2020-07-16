@@ -20,7 +20,7 @@ async function create(req, res) {
   try {
     const topic = await Topic.create(req.body);
     res.status(201).json(topic);
-  } catch(err) {
+  } catch (err) {
     res.status(500).json(err);
   }
 }

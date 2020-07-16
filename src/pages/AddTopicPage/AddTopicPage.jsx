@@ -25,7 +25,6 @@ class AddTopicPage extends Component {
   }
 
   render() {
-    console.log(this.props.category);
     return (
       <>
         <h1>Add New Learning Topic</h1>

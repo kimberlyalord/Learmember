@@ -13,23 +13,28 @@ const categories = {
 };
 
 class App extends Component {
+  // state = {
+  //   topics: [
+  //     {
+  //       _id: 1,
+  //       name: 'Learn Ruby',
+  //       category: categories.categoryName[0],
+  //       learned: false,
+  //       user: 'kimberly'
+  //     },
+  //     {
+  //       _id: 2,
+  //       name: 'Learn French',
+  //       category: categories.categoryName[1],
+  //       learned: false,
+  //       user: 'kimberly'
+  //     },
+  //   ],
+  //   user: userService.getUser(),
+  // }
+
   state = {
-    topics: [
-      {
-        _id: 1,
-        name: 'Learn Ruby',
-        category: categories.categoryName[0],
-        learned: false,
-        user: 'kimberly'
-      },
-      {
-        _id: 2,
-        name: 'Learn French',
-        category: categories.categoryName[1],
-        learned: false,
-        user: 'kimberly'
-      },
-    ],
+    topics: [],
     user: userService.getUser(),
   }
 

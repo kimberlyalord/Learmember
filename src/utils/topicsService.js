@@ -10,13 +10,13 @@ export function getAllTopicsAPI() {
   }).then(allTopics => allTopics.json());
 }
 
-export function createTopicAPI(topicToCreate) {
+export function createTopicAPI(topic) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
       'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
     },
-    body: JSON.stringify(topicToCreate)
+    body: JSON.stringify(topic)
   }).then(newTopic => newTopic.json());
 }
