@@ -7,20 +7,24 @@ import TopicListPage from '../TopicListPage/TopicListPage';
 import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
+const categories = {
+  categoryName: ['Programming', 'Foreign Language']
+};
+
 class App extends Component {
   state = {
     topics: [
       {
         _id: 1,
         name: 'Learn Ruby',
-        category: 'Programming',
+        category: categories.categoryName[0],
         learned: false,
         user: 'kimberly'
       },
       {
         _id: 2,
         name: 'Learn French',
-        category: 'Foreign Language',
+        category: categories.categoryName[1],
         learned: false,
         user: 'kimberly'
       },
