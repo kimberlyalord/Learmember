@@ -4,7 +4,7 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage.jsx';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-
+import * as topicService from '../../utils/topicsService';
 
 class App extends Component {
   state = {
@@ -36,6 +36,13 @@ class App extends Component {
     this.setState({
       user: userService.getUser()
     });
+  }
+
+  getAllTopics = async () => {
+    const topics = await topicService.getAllTopicsAPI();
+    this.setState({
+      topics
+    }, () => this.props.history.push('/'));
   }
 
   render() {
