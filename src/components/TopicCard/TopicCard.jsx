@@ -13,7 +13,7 @@ function TopicCard({ topic }) {
           <dt>Category: </dt>
           <dd>{topic.category}</dd>
           <dt>Learned? </dt>
-          <dd>{topic.learned} ? `Yes!` : `Not yet!`</dd>
+          <dd>{topic.learned ? `Yes!` : `Not yet!`}</dd>
           <dt>Created by: </dt>
           <dd>{`${topic.user}`}</dd>
         </dl>
