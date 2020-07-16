@@ -5,8 +5,8 @@ import TopicCard from '../../components/TopicCard/TopicCard';
 function TopicListPage({ topics }) {
   return (
     <>
-      <h2>Your Learning Topics</h2>
-      <div>
+      <h1>Your Learning Topics</h1>
+      <div className='TopicListPage'>
         {topics.map(topic =>
           <TopicCard
             key={topic._id}

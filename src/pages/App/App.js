@@ -3,6 +3,7 @@ import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage.jsx';
 import LoginPage from '../LoginPage/LoginPage';
+import TopicListPage from '../TopicListPage/TopicListPage';
 import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
@@ -13,13 +14,15 @@ class App extends Component {
         _id: 1,
         name: 'Learn Ruby',
         category: 'Programming',
-        learned: false
+        learned: false,
+        user: 'kimberly'
       },
       {
         _id: 2,
         name: 'Learn French',
         category: 'Foreign Language',
-        learned: false
+        learned: false,
+        user: 'kimberly'
       },
     ],
     user: userService.getUser(),
@@ -78,10 +81,16 @@ class App extends Component {
             <Route exact path='/login' render={({ history }) =>
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />
+            <Route exact path='/' render={({ history }) =>
+            userService.getUser() ?
+              <TopicListPage topics={this.state.topics} />
+              :
+              <Redirect to='/login' />
+            } />
           </Switch>
         </main>
       </div>
-    );
+    )
   }
 }
 

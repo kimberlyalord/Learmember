@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function TopicCard({ topic }) {
+  console.log(topic);
   return (
     <div className="card">
       <div className="card-header">
@@ -14,7 +15,7 @@ function TopicCard({ topic }) {
           <dt>Learned? </dt>
           <dd>{topic.learned} ? `Yes!` : `Not yet!`</dd>
           <dt>Created by: </dt>
-          <dd>{`${topic.user.username}`}</dd>
+          <dd>{`${topic.user}`}</dd>
         </dl>
       </div>
     </div>
