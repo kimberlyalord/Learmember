@@ -25,6 +25,7 @@ class AddTopicPage extends Component {
   }
 
   render() {
+    console.log(this.props.category);
     return (
       <>
         <h1>Add New Learning Topic</h1>
@@ -42,7 +43,7 @@ class AddTopicPage extends Component {
             <label>Topic Category: </label>
             <select name="category" value={this.state.formData.category} onChange={this.handleChange}>
               <option>Choose a Category</option>
-              {this.props.categories.map((category, idx) => <option key={category.id} value={category.name}>{category.name}</option>)}
+              {this.props.categories.categoryName.map((category, idx) => <option key={category.id} value={category.categoryName}>{category}</option>)}
             </select>
           </div>
           <div>
