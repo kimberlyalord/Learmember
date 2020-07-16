@@ -7,6 +7,16 @@ export function getAllTopicsAPI() {
     headers: {
       'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
     }
-  })
-  .then(allTopics => allTopics.json());
+  }).then(allTopics => allTopics.json());
+}
+
+export function createTopicAPI(topicToCreate) {
+  return fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
+    },
+    body: JSON.stringify(topicToCreate)
+  }).then(newTopic => newTopic.json());
 }

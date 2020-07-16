@@ -4,6 +4,7 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage.jsx';
 import LoginPage from '../LoginPage/LoginPage';
 import TopicListPage from '../TopicListPage/TopicListPage';
+import AddTopicPage from '../AddTopicPage/AddTopicPage';
 import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
@@ -52,6 +53,11 @@ class App extends Component {
     }, () => this.props.history.push('/'));
   }
 
+  handleAddTopic = async newTopicData => {
+    await topicService.createTopicAPI(newTopicData);
+    this.getAllTopics();
+  }
+
   render() {
     return (
       <div className="App">
@@ -63,6 +69,8 @@ class App extends Component {
                 {userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}
                 &nbsp;&nbsp;&nbsp;
                 <NavLink exact to='/'>SEE YOUR TOPICS</NavLink>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <NavLink exact to='/add'>ADD NEW TOPIC</NavLink>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
                 &nbsp;&nbsp;
@@ -88,6 +96,12 @@ class App extends Component {
             <Route exact path='/' render={({ history }) =>
             userService.getUser() ?
               <TopicListPage topics={this.state.topics} />
+              :
+              <Redirect to='/login' />
+            } />
+            <Route exact path='/add' render={() =>
+            userService.getUser() ?
+              <AddTopicPage handleAddTopic={this.handleAddTopic} categories={categories} />
               :
               <Redirect to='/login' />
             } />

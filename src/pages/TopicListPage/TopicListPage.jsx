@@ -12,7 +12,7 @@ function TopicListPage({ topics }) {
             key={topic._id}
             topic={topic}
           />
-          )};
+          )}
       </div>
     </>
   )
