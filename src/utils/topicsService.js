@@ -11,8 +11,6 @@ export function getAllTopicsAPI() {
 }
 
 export function createTopicAPI(topic) {
-  console.log('topic service');
-  console.log(topic);
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {

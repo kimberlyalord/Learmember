@@ -9,30 +9,10 @@ import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
 const categories = {
-  categoryName: ['Programming', 'Foreign Language']
+  categoryName: ['Programming', 'Foreign Language', 'Other']
 };
 
 class App extends Component {
-  // state = {
-  //   topics: [
-  //     {
-  //       _id: 1,
-  //       name: 'Learn Ruby',
-  //       category: categories.categoryName[0],
-  //       learned: false,
-  //       user: 'kimberly'
-  //     },
-  //     {
-  //       _id: 2,
-  //       name: 'Learn French',
-  //       category: categories.categoryName[1],
-  //       learned: false,
-  //       user: 'kimberly'
-  //     },
-  //   ],
-  //   user: userService.getUser(),
-  // }
-
   state = {
     topics: [],
     user: userService.getUser(),
