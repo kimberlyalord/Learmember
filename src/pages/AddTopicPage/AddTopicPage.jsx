@@ -5,7 +5,7 @@ class AddTopicPage extends Component {
     formData: {
       name: '',
       category: '',
-      learned: '',
+      learned: 'false',
     }
   }
 
