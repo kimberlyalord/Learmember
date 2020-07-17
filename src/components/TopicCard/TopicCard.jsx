@@ -19,7 +19,8 @@ function TopicCard({ topic, handleDeleteTopic }) {
       </div>
       <div>
         <Link to={{ pathname: '/update', state: { topic: topic } }}>EDIT TOPIC</Link>
-        <Link to={{ pathname: '/delete'}} onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</Link>
+        {/* <Link to={{ pathname: '/delete'}} onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</Link> */}
+        <button onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</button>
       </div>
     </div>
   )
