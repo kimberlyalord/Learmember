@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage.jsx';
 import LoginPage from '../LoginPage/LoginPage';
 import TopicListPage from '../TopicListPage/TopicListPage';
 import AddTopicPage from '../AddTopicPage/AddTopicPage';
+import EditTopicPage from '../EditTopicPage/EditTopicPage';
 import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
@@ -44,6 +45,11 @@ class App extends Component {
 
   handleAddTopic = async newTopicData => {
     await topicService.createTopicAPI(newTopicData);
+    this.getAllTopics();
+  }
+
+  handleUpdateTopic = async updatedTopicData => {
+    await topicService.updateTopicAPI(updatedTopicData);
     this.getAllTopics();
   }
 
@@ -93,6 +99,12 @@ class App extends Component {
               <AddTopicPage handleAddTopic={this.handleAddTopic} categories={categories} />
               :
               <Redirect to='/login' />
+            } />
+            <Route exact path='/update' render={({ history, location }) =>
+              userService.getUser() ?
+                <EditTopicPage handleUpdateTopic={this.handleUpdateTopic} categories={categories} location={location} />
+                :
+                <Redirect to='/login' />
             } />
           </Switch>
         </main>
