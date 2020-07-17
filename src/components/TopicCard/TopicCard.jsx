@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function TopicCard({ topic }) {
+function TopicCard({ topic, handleDeleteTopic }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -19,6 +19,7 @@ function TopicCard({ topic }) {
       </div>
       <div>
         <Link to={{ pathname: '/update', state: { topic: topic } }}>EDIT TOPIC</Link>
+        <Link to={{ pathname: '/delete'}} onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</Link>
       </div>
     </div>
   )

@@ -53,6 +53,13 @@ class App extends Component {
     this.getAllTopics();
   }
 
+  handleDeleteTopic = async idOfTopicToDelete => {
+    await topicService.deleteTopicAPI(idOfTopicToDelete);
+    this.setState(state => ({
+      topics: state.topics.filter(topic => topic._id !== idOfTopicToDelete)
+    }), () => this.props.history.push('/'));
+  }
+
   render() {
     return (
       <div className="App">
@@ -90,7 +97,7 @@ class App extends Component {
             } />
             <Route exact path='/' render={({ history }) =>
             userService.getUser() ?
-              <TopicListPage topics={this.state.topics} />
+              <TopicListPage topics={this.state.topics} handleDeleteTopic={this.handleDeleteTopic} />
               :
               <Redirect to='/login' />
             } />

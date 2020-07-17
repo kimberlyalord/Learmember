@@ -3,7 +3,7 @@
   --header-text: #ddebfa;
   --background-color: #CBDFF6;
   --main-text: #011230;
-  --card-background: #5DB7DE;
+  --card-background: #A0CCFF;
   --card-text: #011230;
 }
 
@@ -19,4 +19,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input, select, button {
+  padding: 4px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: aliceblue;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  background-color: var(--card-background);
+  padding: 5px 5px;
+  border: solid 2px var(--header-background);
+  border-radius: 5px;
+  box-shadow: #274356 1px 1px 6px;
 }
