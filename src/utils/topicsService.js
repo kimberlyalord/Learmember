@@ -32,3 +32,11 @@ export function updateTopicAPI(topic) {
   }).then(updatedTopic => updatedTopic.json());
 }
 
+export function deleteTopicAPI(topic) {
+  return fetch(`${BASE_URL}/${topic._id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
+    }
+  }).then(deletedTopic => deletedTopic.json());
+}
