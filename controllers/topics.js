@@ -4,6 +4,7 @@ module.exports = {
   index,
   create,
   update,
+  delete: deleteOne
 };
 
 async function index(req, res) {
@@ -35,3 +36,11 @@ async function update(req, res) {
   }
 }
 
+async function deleteOne(req, res) {
+  try {
+    const deletedTopic = await Topic.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedTopic);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}
