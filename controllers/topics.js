@@ -3,6 +3,7 @@ const Topic = require('../models/topic');
 module.exports = {
   index,
   create,
+  update,
 };
 
 async function index(req, res) {
@@ -24,3 +25,13 @@ async function create(req, res) {
     res.status(500).json(err);
   }
 }
+
+async function update(req, res) {
+  try {
+    const updatedTopic = await Topic.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json(updatedTopic);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}
+

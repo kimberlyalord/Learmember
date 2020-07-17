@@ -20,3 +20,15 @@ export function createTopicAPI(topic) {
     body: JSON.stringify(topic)
   }).then(newTopic => newTopic.json());
 }
+
+export function updateTopicAPI(topic) {
+  return fetch(`${BASE_URL}/${topic._id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
+    },
+    body: JSON.stringify(topic)
+  }).then(updatedTopic => updatedTopic.json());
+}
+
