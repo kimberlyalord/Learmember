@@ -18,6 +18,10 @@ class App extends Component {
     user: userService.getUser(),
   }
 
+  componentDidMount() {
+    this.getAllTopics();
+  }
+
   handleLogout = () => {
     userService.logout();
     this.setState({
