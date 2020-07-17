@@ -18,6 +18,9 @@ function TopicCard({ topic }) {
           <dd>{`${topic.user}`}</dd>
         </dl>
       </div>
+      <div>
+        <Link to={{ pathname: '/update', state: { topic: topic } }}>EDIT TOPIC</Link>
+      </div>
     </div>
   )
 }
