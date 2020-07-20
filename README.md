@@ -4,7 +4,9 @@
 
 ## Screenshots
 
-
+![Home Page](url)<br>
+![Topic Card](url)<br>
+![Add Topic Page](url)
 
 ## Technologies Used
 
@@ -18,9 +20,13 @@
 
 ## Getting Started
 
+[Heroku Link](https://learmember.herokuapp.com/)<br>
+[Trello Planning Board](https://trello.com/b/6Tg9k0zR/project-4-learmember)
 
 ## Next Steps
 
+- Add a social element by allowing users to see topics added by others and add resource links to their topics.
+- Implement privacy by post or user account, in case the user does not want their topics to be public. 
 
 ## Credits
 
