@@ -24,18 +24,15 @@ input, select, button {
   padding: 4px;
   font-size: 16px;
   border-radius: 4px;
-  background-color: aliceblue;
+  background-color: var(--header-text);
   margin: 0 auto;
 }
 
 h1 {
   font-weight: bold;
-  font-size: 40px;
-  background-color: var(--card-background);
-  padding: 5px 10px;
-  border: solid 2px var(--header-background);
-  border-radius: 5px;
-  box-shadow: #274356 1px 1px 6px;
+  font-size: 50px;
+  font-family: 'Patrick Hand', cursive;  
+  text-shadow: 2px 2px 2px #8692A0;
 }
 
 .card {

@@ -68,7 +68,6 @@ class App extends Component {
           <nav>
             {userService.getUser() ?
               <>
-                {userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}
                 &nbsp;&nbsp;&nbsp;
                 <NavLink exact to='/'>SEE YOUR TOPICS</NavLink>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -88,6 +87,7 @@ class App extends Component {
           </nav>
         </header>
         <main>
+        <div className='greeting'>{userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}</div>
           <Switch>
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
