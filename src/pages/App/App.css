@@ -2,7 +2,7 @@
   text-align: center;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 8vmin auto;
+  grid-template-rows: 10vmin auto;
 }
 
 .title {
@@ -18,13 +18,24 @@
   display: grid;
   text-align: left;
   font-weight: bold;
+}
+
+.greeting, .about {
   background-color: var(--card-background);
+  box-shadow: #274356 1px 1px 6px;
+}
+
+.about {
+  width: 75%;
+  margin: -100px auto 20px auto;
+  padding: 20px;
 }
 
 .App header {
   background-color: var(--header-background);
   color: var(--header-text);
   text-shadow: 2px 2px 2px black;
+  box-shadow: #274356 1px 1px 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;

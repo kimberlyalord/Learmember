@@ -87,7 +87,13 @@ class App extends Component {
           </nav>
         </header>
         <main>
-        <div className='greeting'>{userService.getUser().username ? `Welcome, ${userService.getUser().username}` : ''}</div>
+        <>
+        {userService.getUser() ?
+        <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}` : ''}</div>
+        :
+        <div className='about'>"Learmember" is a portmanteau of "learn" and "remember." This project is designed to be a place where you can keep track of things you want to learn. Perhaps you are out and about and hear about something that sounds interesting, but you don't have time to drop everything and learn about it, so you go about your day and forget all about it. With Learmember, you can pull out your phone and create a note for yourself so that you can remember to go learn about that topic when you have time! You can also use Learmember to keep track of things you've learned and save resources to learn about your topics.</div>
+        }
+        </>
           <Switch>
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />

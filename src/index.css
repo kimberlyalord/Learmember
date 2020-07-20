@@ -34,7 +34,6 @@ h1 {
   background-color: var(--card-background);
   border: solid 2px black;
   border-radius: 5px;
-  /* padding: 0 0 15px 0; */
   margin-bottom: 30px;
   box-shadow: #274356 1px 1px 6px;
 }
