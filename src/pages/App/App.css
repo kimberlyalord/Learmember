@@ -7,14 +7,18 @@
 
 .title {
   font-family: 'Permanent Marker', cursive;
-  font-size: 4vmin;
+  font-size: 5vmin;
   text-shadow: 2px 2px 2px black;
 }
 
 .greeting {
-  margin: 0 10px;
-  padding: 10px 5px;
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+  margin: 0 0 0 30px;
+  display: grid;
+  text-align: left;
   font-weight: bold;
+  background-color: var(--card-background);
 }
 
 .App header {
@@ -37,7 +41,6 @@
 .App a:hover {
   color: white;
   background-color: #001B2D;
-  padding: 0px 5px;
 }
 
 .App main {

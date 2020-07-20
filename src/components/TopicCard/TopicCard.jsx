@@ -14,13 +14,12 @@ function TopicCard({ topic, handleDeleteTopic }) {
           <dt>Learned? </dt>
           <dd>{topic.learned ? `Yes!` : `Not yet!`}</dd>
           <dt>Created by: </dt>
-          <dd>{`${topic.user}`}</dd>
+          <dd>{`${topic.user.username}`}</dd>
         </dl>
       </div>
-      <div>
+      <div className="card-footer">
         <Link to={{ pathname: '/update', state: { topic: topic } }}>EDIT TOPIC</Link>
         <Link to={{ pathname: '/delete'}} onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</Link>
-        <button onClick={() => handleDeleteTopic(topic._id)}>DELETE TOPIC</button>
       </div>
     </div>
   )

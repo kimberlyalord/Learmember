@@ -15,11 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 input, select, button {
   padding: 4px;
   font-size: 16px;
@@ -37,21 +32,35 @@ h1 {
 
 .card {
   background-color: var(--card-background);
-  border: solid 2px var(--header-background);
+  border: solid 2px black;
   border-radius: 5px;
-  padding: 0 0 15px 0;
+  /* padding: 0 0 15px 0; */
+  margin-bottom: 30px;
   box-shadow: #274356 1px 1px 6px;
 }
 
-.card-header {
+.card-header, .card-footer {
   background-color: var(--header-background);
   color: var(--header-text);
+  display: grid;
+}
+
+.card-header {
   margin: 0 auto;
   padding: 0;
-  display: grid;
   text-shadow: 2px 2px 2px black;
   font-family: 'Patrick Hand', cursive;  
   font-size: 2.5vmin;
+}
+
+.card-footer {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.card-body {
+  text-align: left;
+  padding: 0 0 0 30px;
 }
 
 dt {
