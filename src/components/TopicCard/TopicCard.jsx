@@ -5,7 +5,7 @@ function TopicCard({ topic, handleDeleteTopic }) {
   return (
     <div className="card">
       <div className="card-header">
-        <h2 className="card-title">{topic.name}</h2>
+        <h2>{topic.name}</h2>
       </div>
       <div className="card-body">
         <dl>
