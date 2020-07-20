@@ -22,7 +22,7 @@
 
 .greeting, .about {
   background-color: var(--card-background);
-  box-shadow: #274356 1px 1px 6px;
+  box-shadow: #274356 1px 1px 8px;
 }
 
 .about {
