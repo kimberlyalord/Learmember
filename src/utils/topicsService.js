@@ -32,8 +32,8 @@ export function updateTopicAPI(topic) {
   }).then(updatedTopic => updatedTopic.json());
 }
 
-export function deleteTopicAPI(topic) {
-  return fetch(`${BASE_URL}/${topic._id}`, {
+export function deleteTopicAPI(topicIdToDelete) {
+  return fetch(`${BASE_URL}/${topicIdToDelete}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`

@@ -55,6 +55,7 @@ class App extends Component {
 
   handleDeleteTopic = async idOfTopicToDelete => {
     await topicService.deleteTopicAPI(idOfTopicToDelete);
+    console.log(idOfTopicToDelete);
     this.setState(state => ({
       topics: state.topics.filter(topic => topic._id !== idOfTopicToDelete)
     }), () => this.props.history.push('/'));
