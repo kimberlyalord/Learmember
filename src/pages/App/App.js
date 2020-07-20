@@ -10,7 +10,7 @@ import userService from '../../utils/userService';
 import * as topicService from '../../utils/topicsService';
 
 const categories = {
-  categoryName: ['Programming', 'Foreign Language', 'Other']
+  categoryName: ['Art', 'Biology', 'Business', 'Chemistry', 'Computer Science', 'Economics', 'General Science', 'Geography', 'Health & Medicine', 'History', 'Law', 'Languages', 'Literature', 'Mathematics', 'Music', 'Other', 'Philosophy', 'Physical Education', 'Physics', 'Political Science', 'Programming', 'Psychology', 'Sociology', 'Statistics']
 };
 
 class App extends Component {
@@ -33,7 +33,7 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({
       user: userService.getUser()
-    });
+    }, () => this.getAllTopics());
   }
 
   getAllTopics = async () => {
