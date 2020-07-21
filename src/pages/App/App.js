@@ -55,9 +55,24 @@ class App extends Component {
 
   handleDeleteTopic = async idOfTopicToDelete => {
     await topicService.deleteTopicAPI(idOfTopicToDelete);
-    console.log(idOfTopicToDelete);
     this.setState(state => ({
       topics: state.topics.filter(topic => topic._id !== idOfTopicToDelete)
+    }), () => this.props.history.push('/'));
+  }
+
+  toggleFilterLearned = async () => {
+    this.componentDidMount();
+    const topics = await topicService.getAllTopicsAPI();
+    this.setState(state => ({
+      topics: state.topics.filter(topic => topic.learned)
+    }), () => this.props.history.push('/'));
+  }
+
+  toggleFilterUnlearned = async () => {
+    this.componentDidMount();
+    const topics = await topicService.getAllTopicsAPI();
+    this.setState(state => ({
+      topics: state.topics.filter(topic => topic.learned == false)
     }), () => this.props.history.push('/'));
   }
 
@@ -90,7 +105,15 @@ class App extends Component {
         <div className='greeting-container'>
           <>
             {userService.getUser() ?
-              <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}` : ''}</div>
+              <div>
+                <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}!` : ''}
+                  <div className='filter'>Filter by:&nbsp;&nbsp;
+                    <button id='learned-selector' onClick={() => this.toggleFilterLearned()}>Learned</button>
+                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                    <button id='unlearned-selector' onClick={() => this.toggleFilterUnlearned()}>Unlearned</button>
+                  </div>
+                </div>
+              </div>
               :
               <div className='about'>"Learmember" is a portmanteau of "learn" and "remember." This project is designed to be a place where you can keep track of things you want to learn. Perhaps you are out and about and hear about something that sounds interesting, but you don't have time to drop everything and learn about it, so you go about your day and forget all about it. With Learmember, you can pull out your phone and create a note for yourself so that you can remember to go learn about that topic when you have time! You can also use Learmember to keep track of things you've learned and save resources to learn about your topics.</div>
             }
