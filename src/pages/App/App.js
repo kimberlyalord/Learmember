@@ -138,13 +138,13 @@ class App extends Component {
                 <Redirect to='/login' />
             } />
             <Route exact path='/add' render={() =>
-              userService.getUser() ?
+              this.state.user ?
                 <AddTopicPage handleAddTopic={this.handleAddTopic} categories={categories} />
                 :
                 <Redirect to='/login' />
             } />
             <Route exact path='/update' render={({ history, location }) =>
-              userService.getUser() ?
+              this.state.user ?
                 <EditTopicPage handleUpdateTopic={this.handleUpdateTopic} categories={categories} location={location} />
                 :
                 <Redirect to='/login' />
