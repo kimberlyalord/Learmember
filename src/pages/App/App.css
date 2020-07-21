@@ -82,3 +82,8 @@ footer {
   background-color: var(--header-background);
   color: var(--header-text);
 }
+
+.selected {
+  color: var(--header-text);
+  background-color: #445365;
+}

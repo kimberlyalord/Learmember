@@ -17,6 +17,7 @@ class App extends Component {
   state = {
     topics: [],
     user: userService.getUser(),
+    toggleLearnedButton: ''
   }
 
   componentDidMount() {
@@ -39,7 +40,8 @@ class App extends Component {
   getAllTopics = async () => {
     const topics = await topicService.getAllTopicsAPI();
     this.setState({
-      topics
+      topics,
+      toggleLearnedButton: ''
     }, () => this.props.history.push('/'));
   }
 
@@ -64,7 +66,8 @@ class App extends Component {
     this.componentDidMount();
     const topics = await topicService.getAllTopicsAPI();
     this.setState(state => ({
-      topics: state.topics.filter(topic => topic.learned)
+      topics: state.topics.filter(topic => topic.learned),
+      toggleLearnedButton: 'learned'
     }), () => this.props.history.push('/'));
   }
 
@@ -72,7 +75,8 @@ class App extends Component {
     this.componentDidMount();
     const topics = await topicService.getAllTopicsAPI();
     this.setState(state => ({
-      topics: state.topics.filter(topic => topic.learned == false)
+      topics: state.topics.filter(topic => topic.learned == false),
+      toggleLearnedButton: 'unlearned'
     }), () => this.props.history.push('/'));
   }
 
@@ -85,7 +89,7 @@ class App extends Component {
             {userService.getUser() ?
               <>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/'>SEE YOUR TOPICS</NavLink>
+                <NavLink exact to='/' onClick={this.getAllTopics}>SEE YOUR TOPICS</NavLink>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 <NavLink exact to='/add'>ADD NEW TOPIC</NavLink>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -108,9 +112,9 @@ class App extends Component {
               <div>
                 <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}!` : ''}
                   <div className='filter'>Filter by:&nbsp;&nbsp;
-                    <button id='learned-selector' onClick={() => this.toggleFilterLearned()}>Learned</button>
+                    <button id='learned-selector' onClick={() => this.toggleFilterLearned()} className={this.state.toggleLearnedButton === 'learned' ? 'selected' : ''}>Learned</button>
                     &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <button id='unlearned-selector' onClick={() => this.toggleFilterUnlearned()}>Unlearned</button>
+                    <button id='unlearned-selector' onClick={() => this.toggleFilterUnlearned()} className={this.state.toggleLearnedButton === 'unlearned' ? 'selected' : ''}>Unlearned</button>
                   </div>
                 </div>
               </div>
