@@ -4,9 +4,9 @@
 
 ## Screenshots
 
-![Home Page](url)<br>
-![Topic Card](url)<br>
-![Add Topic Page](url)
+![Home Page](https://i.imgur.com/rlaof6C.png)<br>
+![Topic List Page](https://i.imgur.com/23sZuBx.png)<br>
+![Add Topic Page](https://i.imgur.com/EHNTCXI.png)
 
 ## Technologies Used
 
