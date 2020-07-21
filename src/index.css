@@ -8,7 +8,10 @@
 }
 
 body {
-  margin: 0 auto;
+  background-color: var(--background-color);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
   font-family: 'Catamaran', sans-serif;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;

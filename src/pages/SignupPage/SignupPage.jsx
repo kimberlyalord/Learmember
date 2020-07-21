@@ -4,10 +4,10 @@ import './SignupPage.css';
 
 class SignupPage extends Component {
 
-  state = {message: ''}
+  state = { message: '' }
 
   updateMessage = (msg) => {
-    this.setState({message: msg});
+    this.setState({ message: msg });
   }
 
   render() {
