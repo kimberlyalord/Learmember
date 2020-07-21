@@ -16,11 +16,15 @@ body {
 }
 
 input, select, button {
-  padding: 2px 10px;
   font-size: 16px;
   border-radius: 4px;
   background-color: white;
   margin: 0 auto;
+}
+
+input, select {
+  padding: 4px 10px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -28,10 +32,11 @@ label {
 }
 
 button {
+  padding: 0px 10px;
   font-weight: bold;
-  font-size: 24px;
-  font-family: 'Patrick Hand', cursive; 
-  background-color: var(--card-background);
+  font-size: 18px;
+  font-family: 'Catamaran', sans-serif;
+  background-color: var(--background-color);
   box-shadow: #274356 1px 1px 4px;
 }
 
@@ -42,12 +47,16 @@ h1 {
   text-shadow: 2px 2px 2px #8692A0;
 }
 
-.card {
+.card, form {
   background-color: var(--card-background);
   border: solid 2px black;
   border-radius: 5px;
   margin-bottom: 30px;
   box-shadow: #274356 1px 1px 6px;
+}
+
+form {
+  padding: 20px 20px;
 }
 
 .card-header, .card-footer {

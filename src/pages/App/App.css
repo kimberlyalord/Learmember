@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  min-height: 100vh;
+  background-color: var(--background-color);
   display: grid;
   grid-template-rows: 10vmin auto;
 }
@@ -11,10 +11,25 @@
   text-shadow: 2px 2px 2px black;
 }
 
-.greeting {
+.App header {
+  background-color: var(--header-background);
+  color: var(--header-text);
+  text-shadow: 2px 2px 2px black;
+  box-shadow: #274356 2px 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vmin;
+  font-size: 2.5vmin;
+}
+
+.greeting-container {
   width: 100%;
+  margin: 0 auto;
+}
+
+.greeting {
   padding: 10px 20px 10px 20px;
-  margin: 0 0 0 30px;
   display: grid;
   text-align: left;
   font-weight: bold;
@@ -27,26 +42,15 @@
 
 .about {
   width: 75%;
-  margin: -100px auto 20px auto;
+  margin: 40px auto;
   padding: 20px;
-}
-
-.App header {
-  background-color: var(--header-background);
-  color: var(--header-text);
-  text-shadow: 2px 2px 2px black;
-  box-shadow: #274356 1px 1px 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2vmin;
-  font-size: 2.5vmin;
 }
 
 .App a {
   text-decoration: none;
   color: var(--header-text);
-  padding: 5px 10px;
+  background-color: var(--header-background);
+  padding: 2px 10px;
 }
 
 .App a:hover {
@@ -63,3 +67,19 @@
   align-items: center;
 }
 
+footer {
+  display: grid;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  background-color: var(--header-background);
+  color: var(--header-text);
+}
+
+.SignupPage footer, .LoginPage footer, .EditTopicPage footer, .AddTopicPage footer {
+  position: absolute;
+}

@@ -49,8 +49,8 @@ class EditTopicPage extends Component {
             </select>
           </div>
           <button type="submit" className="button">
-            Submit Changes
-          </button>
+            SUBMIT CHANGES
+          </button>&nbsp;&nbsp;
           <Link to='/'>CANCEL</Link>
         </form>
       </>

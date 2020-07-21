@@ -88,13 +88,15 @@ class App extends Component {
           </nav>
         </header>
         <main>
-        <>
-        {userService.getUser() ?
-        <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}` : ''}</div>
-        :
-        <div className='about'>"Learmember" is a portmanteau of "learn" and "remember." This project is designed to be a place where you can keep track of things you want to learn. Perhaps you are out and about and hear about something that sounds interesting, but you don't have time to drop everything and learn about it, so you go about your day and forget all about it. With Learmember, you can pull out your phone and create a note for yourself so that you can remember to go learn about that topic when you have time! You can also use Learmember to keep track of things you've learned and save resources to learn about your topics.</div>
-        }
-        </>
+          <div className='greeting-container'>
+            <>
+              {userService.getUser() ?
+                <div className='greeting'>{userService.getUser() ? `Welcome, ${userService.getUser().username}` : ''}</div>
+                :
+                <div className='about'>"Learmember" is a portmanteau of "learn" and "remember." This project is designed to be a place where you can keep track of things you want to learn. Perhaps you are out and about and hear about something that sounds interesting, but you don't have time to drop everything and learn about it, so you go about your day and forget all about it. With Learmember, you can pull out your phone and create a note for yourself so that you can remember to go learn about that topic when you have time! You can also use Learmember to keep track of things you've learned and save resources to learn about your topics.</div>
+              }
+            </>
+          </div>
           <Switch>
             <Route exact path='/signup' render={({ history }) =>
               <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
@@ -103,16 +105,16 @@ class App extends Component {
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />
             <Route exact path='/' render={({ history }) =>
-            userService.getUser() ?
-              <TopicListPage topics={this.state.topics} handleDeleteTopic={this.handleDeleteTopic} />
-              :
-              <Redirect to='/login' />
+              userService.getUser() ?
+                <TopicListPage topics={this.state.topics} handleDeleteTopic={this.handleDeleteTopic} />
+                :
+                <Redirect to='/login' />
             } />
             <Route exact path='/add' render={() =>
-            userService.getUser() ?
-              <AddTopicPage handleAddTopic={this.handleAddTopic} categories={categories} />
-              :
-              <Redirect to='/login' />
+              userService.getUser() ?
+                <AddTopicPage handleAddTopic={this.handleAddTopic} categories={categories} />
+                :
+                <Redirect to='/login' />
             } />
             <Route exact path='/update' render={({ history, location }) =>
               userService.getUser() ?
@@ -122,6 +124,7 @@ class App extends Component {
             } />
           </Switch>
         </main>
+        <footer>&nbsp;&nbsp;&nbsp;&nbsp;Created by Kimberly A. Lord 2020</footer>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class AddTopicPage extends Component {
   state = {
@@ -53,8 +54,9 @@ class AddTopicPage extends Component {
             </select>
           </div>
           <button type="submit" className="button">
-            Add Topic
-          </button>
+            ADD TOPIC
+          </button>&nbsp;&nbsp;
+          <Link to='/'>CANCEL</Link>
         </form>
       </>
     );
