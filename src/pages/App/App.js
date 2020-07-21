@@ -75,7 +75,7 @@ class App extends Component {
     this.componentDidMount();
     const topics = await topicService.getAllTopicsAPI();
     this.setState(state => ({
-      topics: state.topics.filter(topic => topic.learned == false),
+      topics: state.topics.filter(topic => topic.learned === false),
       toggleLearnedButton: 'unlearned'
     }), () => this.props.history.push('/'));
   }
@@ -89,12 +89,12 @@ class App extends Component {
             {userService.getUser() ?
               <>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/' onClick={this.getAllTopics}>SEE YOUR TOPICS</NavLink>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <NavLink exact to='/' onClick={this.getAllTopics}>VIEW ALL TOPICS</NavLink>
+                &nbsp;|&nbsp;
                 <NavLink exact to='/add'>ADD NEW TOPIC</NavLink>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
+                &nbsp;|&nbsp;
                 <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
-                &nbsp;&nbsp;
+                &nbsp;
               </>
               :
               <>
