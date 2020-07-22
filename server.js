@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const favicon = require('serve-favicon');
 
 const app = express();
 
@@ -12,6 +13,7 @@ const topicsRoutes = require('./routes/topics');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // API routes
