@@ -10,8 +10,6 @@ class AddTopicPage extends Component {
     }
   }
 
-  // test
-
   handleChange = e => {
     const changedFormData = {
       ...this.state.formData,
