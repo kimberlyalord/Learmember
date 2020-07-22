@@ -41,14 +41,6 @@ class AddTopicPage extends Component {
             />
           </div>
           <div>
-            <label>Learning Resource for this Topic (url, optional): </label>
-            <input
-              name='resource'
-              value={this.state.formData.resource}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
             <label>Topic Category: </label>
             <select name="category" value={this.state.formData.category} onChange={this.handleChange}>
               <option>Choose a Category</option>
@@ -61,6 +53,14 @@ class AddTopicPage extends Component {
               <option value="false">No</option>
               <option value="true">Yes!</option>
             </select>
+          </div>
+          <div>
+            <label>Learning Resource for this Topic (url, optional): </label>
+            <input
+              name='resource'
+              value={this.state.formData.resource}
+              onChange={this.handleChange}
+            />
           </div>
           <button type="submit" className="button">
             ADD TOPIC
