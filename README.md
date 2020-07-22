@@ -5,8 +5,8 @@
 ## Screenshots
 
 ![Home Page](https://i.imgur.com/rlaof6C.png)<br>
-![Topic List Page](https://i.imgur.com/23sZuBx.png)<br>
-![Add Topic Page](https://i.imgur.com/EHNTCXI.png)
+![Topic List Page](https://i.imgur.com/ovXx66O.png)<br>
+![Add Topic Page](https://i.imgur.com/s2jNzLE.png)
 
 ## Technologies Used
 
