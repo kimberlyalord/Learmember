@@ -5,6 +5,7 @@ const topicSchema = new Schema({
   name: {type: String, required: true},
   category: String,
   learned: Boolean,
+  resource: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'

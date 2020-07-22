@@ -35,6 +35,14 @@ class EditTopicPage extends Component {
             />
           </div>
           <div>
+            <label>Learning Resource for this Topic (url): </label>
+            <input
+              name='resource'
+              value={this.state.formData.resource}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
             <label>Topic Category: </label>
             <select name="category" value={this.state.formData.category} onChange={this.handleChange}>
               <option>Choose a Category</option>

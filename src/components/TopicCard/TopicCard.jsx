@@ -15,6 +15,8 @@ function TopicCard({ topic, handleDeleteTopic }) {
           <dd>{topic.learned ? `Yes!` : `Not yet!`}</dd>
           <dt>Created by: </dt>
           <dd>{`${topic.user.username}`}</dd>
+          <dt>Learning Resources: </dt>
+          <dd>{topic.resource ? `${topic.resource}` : `No resources added yet!`}</dd>
         </dl>
       </div>
       <div className="card-footer">

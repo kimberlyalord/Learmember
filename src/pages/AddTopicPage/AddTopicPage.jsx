@@ -7,6 +7,7 @@ class AddTopicPage extends Component {
       name: '',
       category: '',
       learned: 'false',
+      resources: ''
     }
   }
 
@@ -37,6 +38,14 @@ class AddTopicPage extends Component {
               value={this.state.formData.name}
               onChange={this.handleChange}
               required
+            />
+          </div>
+          <div>
+            <label>Learning Resource for this Topic (url, optional): </label>
+            <input
+              name='resource'
+              value={this.state.formData.resource}
+              onChange={this.handleChange}
             />
           </div>
           <div>
